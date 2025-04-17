@@ -10,11 +10,6 @@ export async function getServerSideProps() {
 }
 
 export default function Home({ message }) {
-  const handleClick = () => {
-    if (window._lio) {
-      window._lio.track('custom_click_event', { category: 'navigation', label: 'Go to About' });
-    }
-  };
 
   return (
     <>
@@ -25,7 +20,7 @@ export default function Home({ message }) {
         <h1>{message}</h1>
         <p>This is the home page. Click the link to track a custom event.</p>
         <Link href="/about">
-          <a onClick={handleClick}>Go to About</a>
+          <a>Go to About</a>
         </Link>
       </main>
     </>
